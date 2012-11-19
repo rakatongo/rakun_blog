@@ -1,0 +1,23 @@
+
+
+
+
+<%= render @posts %>
+
+
+<% @posts.each do |post| %>
+  <article class="post">  
+    <header><%= link_to(post.titulo.titleize, post_path(post)) %></header>
+    <div class="row">
+    	<div class="span3">
+	    	a La Derecha!
+	    </div>
+	    <div class="contenido span8">
+	      <%=raw post.contenido %>          
+	    </div>    
+    </div>    
+  </article>  
+<% end %>
+<br />
+
+<%= link_to 'New Post', new_post_path %>
